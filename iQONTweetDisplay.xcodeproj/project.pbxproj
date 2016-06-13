@@ -402,6 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iQONTweetDisplay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iQONTweetDisplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iQONTweetDisplay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iQONTweetDisplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,6 +486,7 @@
 				4BAEB33D1D0EB58E00E77FAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BAEB33E1D0EB58E00E77FAD /* Build configuration list for PBXNativeTarget "iQONTweetDisplayTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +495,7 @@
 				4BAEB3401D0EB58E00E77FAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BAEB3411D0EB58E00E77FAD /* Build configuration list for PBXNativeTarget "iQONTweetDisplayUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +504,7 @@
 				4BAEB3431D0EB58E00E77FAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
