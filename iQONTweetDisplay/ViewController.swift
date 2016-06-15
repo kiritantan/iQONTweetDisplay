@@ -11,7 +11,7 @@ import Accounts
 import Social
 import SwiftyJSON
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     var accountStore = ACAccountStore()
     var twAccount: ACAccount?
     var tweets: [Tweet] = []
@@ -74,4 +74,19 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("customCell", forIndexPath: indexPath)
+        cell.backgroundColor = UIColor.redColor()
+        return cell
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+
 }
