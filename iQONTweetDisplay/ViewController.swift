@@ -69,7 +69,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 for aTweet in json["statuses"].array! {
                     self.tweets.append(Tweet(fullname: aTweet["user"]["name"].stringValue, username: aTweet["user"]["screen_name"].stringValue, avatarURLString: aTweet["user"]["profile_image_url_https"].stringValue, tweetText: aTweet["text"].stringValue, timeStamp: aTweet["created_at"].stringValue))
                 }
-                self.collectionView.reloadData()
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.collectionView.reloadData()
+                })
             }
         }
     }
