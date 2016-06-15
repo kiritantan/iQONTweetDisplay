@@ -29,18 +29,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         accountStore.requestAccessToAccountsWithType(accountType, options: nil) { (granted:Bool, error:NSError?) -> Void in
             if error != nil {
+                self.presentViewController(self.createErrorAlert("通信が失敗しました", type: .Alert), animated: true, completion: nil)
                 print("error! \(error)")
                 return
             }
             
             if !granted {
-                print("error! Twitterアカウントの利用が許可されていません")
+                self.presentViewController(self.createErrorAlert("アカウントの利用が許可されていません。\n設定からアカウントの利用を許可してください。", type: .Alert), animated: true, completion: nil)
                 return
             }
             
             let accounts = self.accountStore.accountsWithAccountType(accountType) as! [ACAccount]
             if accounts.count == 0 {
-                print("error! 設定画面からアカウントを設定してください")
+                self.presentViewController(self.createErrorAlert("アカウントが設定されておりません。\n設定からアカウントを設定してください。", type: .Alert), animated: true, completion: nil)
                 return
             }
             self.twAccount = accounts[0]
@@ -61,6 +62,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         //1000件取得できるようにする
         request.performRequestWithHandler { (responseData, urlResponse, error) -> Void in
             if error != nil {
+                self.presentViewController(self.createErrorAlert("ツイート検索が失敗しました。", type: .Alert), animated: true, completion: nil)
                 print("error is \(error)")
             } else {
                 let json = JSON(data: responseData)
@@ -70,6 +72,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    func createErrorAlert(errorMessage: String, type: UIAlertControllerStyle) -> UIAlertController {
+        let alert: UIAlertController = UIAlertController(title: "エラー", message: errorMessage, preferredStyle:  type)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+            (action: UIAlertAction!) -> Void in
+        })
+        alert.addAction(defaultAction)
+        return alert
     }
 
     override func didReceiveMemoryWarning() {
