@@ -50,7 +50,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     private func getTweets() {
         let URL = NSURL(string: "https://api.twitter.com/1.1/search/tweets.json")
-        let param = ["q": "WIXOSS", "count": "100"]
+        let param = ["q": "iQON", "count": "100"]
         let request = SLRequest(forServiceType: SLServiceTypeTwitter,
                                 requestMethod: .GET,
                                 URL: URL,
