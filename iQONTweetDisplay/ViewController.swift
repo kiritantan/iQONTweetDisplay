@@ -12,6 +12,7 @@ import Social
 import SwiftyJSON
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    @IBOutlet weak var collectionView: UICollectionView!
     var accountStore = ACAccountStore()
     var twAccount: ACAccount?
     var tweets: [Tweet] = []
@@ -66,6 +67,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 for aTweet in json["statuses"].array! {
                     self.tweets.append(Tweet(fullname: aTweet["user"]["name"].stringValue, username: aTweet["user"]["screen_name"].stringValue, avatarURLString: aTweet["user"]["profile_image_url_https"].stringValue, tweetText: aTweet["text"].stringValue, timeStamp: aTweet["created_at"].stringValue))
                 }
+                self.collectionView.reloadData()
             }
         }
     }
@@ -77,6 +79,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("customCell", forIndexPath: indexPath) as! CustomCell
+        if tweets.count >= 10 {
+            cell.setTweet(tweets[indexPath.row])
+        }
         return cell
     }
     
@@ -85,6 +90,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if tweets.count >= 10 {
+            return tweets.count
+        }
         return 10
     }
 

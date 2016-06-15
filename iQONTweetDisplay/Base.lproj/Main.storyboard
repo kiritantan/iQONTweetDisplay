@@ -41,9 +41,6 @@
                                                         <constraint firstAttribute="height" constant="60" id="rPL-mK-A9a"/>
                                                         <constraint firstAttribute="width" constant="60" id="tNw-cR-1r2"/>
                                                     </constraints>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="244" y="0.0" width="60" height="60"/>
-                                                    </variation>
                                                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                                         <rect key="frame" x="350" y="29" width="60" height="61"/>
                                                     </variation>
@@ -130,6 +127,9 @@
                             <constraint firstItem="5K7-7M-LVx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vju-dR-OuV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="5K7-7M-LVx" id="N8s-6W-luZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
