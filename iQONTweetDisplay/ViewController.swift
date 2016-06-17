@@ -11,15 +11,20 @@ import Accounts
 import Social
 import SwiftyJSON
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
     var accountStore = ACAccountStore()
     var twAccount: ACAccount?
     var tweets: [Tweet] = []
+    var screenSize: CGSize!
+    var statusBarHeight: CGFloat!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selectTwitterAccount()
+        statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        screenSize = UIScreen.mainScreen().bounds.size
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -107,6 +112,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             return tweets.count
         }
         return 10
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: screenSize.width, height: (screenSize.height -  statusBarHeight)/4)
     }
 
 }
