@@ -62,7 +62,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                                 URL: URL,
                                 parameters: query)
         request.account = twAccount
-        //1000件取得できるようにする
         request.performRequestWithHandler { (responseData, urlResponse, error) -> Void in
             if error != nil {
                 self.presentViewController(self.createErrorAlert("ツイート検索が失敗しました。", type: .Alert), animated: true, completion: nil)
@@ -71,6 +70,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 let json = JSON(data: responseData)
                 for aTweet in json["statuses"].array! {
                     self.tweets.append(Tweet(fullname: aTweet["user"]["name"].stringValue, username: aTweet["user"]["screen_name"].stringValue, avatarURLString: aTweet["user"]["profile_image_url_https"].stringValue, tweetText: aTweet["text"].stringValue, timeStamp: aTweet["created_at"].stringValue))
+                }
+                if let query = json["search_metadata"]["next_results"].string {
+                    print(self.tweets.count)
+                    if self.tweets.count < 1000 {
+                        self.getTweets(self.parseStringToDictionary(query.stringByReplacingOccurrencesOfString("?", withString: "")))
+                    }
                 }
                 dispatch_async(dispatch_get_main_queue(), {
                     self.collectionView.reloadData()
