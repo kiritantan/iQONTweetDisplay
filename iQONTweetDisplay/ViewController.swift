@@ -50,20 +50,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 return
             }
             self.twAccount = accounts[0]
-            self.getTweets()
+            self.getTweets(["q": "iQON", "count": "100"])
         }
     }
     
-    private func getTweets() {
+    private func getTweets(query: [NSObject: AnyObject]) {
         let URL = NSURL(string: "https://api.twitter.com/1.1/search/tweets.json")
-        let param = ["q": "iQON", "count": "100"]
         let request = SLRequest(forServiceType: SLServiceTypeTwitter,
                                 requestMethod: .GET,
                                 URL: URL,
-                                parameters: param)
-        
+                                parameters: query)
         request.account = twAccount
-        
         //1000件取得できるようにする
         request.performRequestWithHandler { (responseData, urlResponse, error) -> Void in
             if error != nil {
