@@ -50,7 +50,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 return
             }
             self.twAccount = accounts[0]
-            self.getTweets(["q": "iQON", "count": "100"])
+            let query = "q=iQON&count=100"
+            self.getTweets(self.parseStringToDictionary(query))
         }
     }
     
@@ -86,6 +87,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         alert.addAction(defaultAction)
         return alert
     }
+    
+    func parseStringToDictionary(queryStr: String) -> [NSObject: AnyObject] {
+        var parsedQuery: [NSObject: AnyObject] = [:]
+        if queryStr.isEmpty {
+            return parsedQuery
+        }
+        let queries = queryStr.componentsSeparatedByString("&").map({$0.componentsSeparatedByString("=")})
+        for query in queries {
+            parsedQuery[query[0]] = query[1]
+        }
+        return parsedQuery
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
