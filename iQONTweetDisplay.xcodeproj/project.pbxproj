@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B3E72121D1028F10011AC18 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E72111D1028F10011AC18 /* Tweet.swift */; };
+		4B3E72341D11914D0011AC18 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E72331D11914C0011AC18 /* CustomCell.swift */; };
 		4BAEB3171D0EB58E00E77FAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAEB3161D0EB58E00E77FAD /* AppDelegate.swift */; };
 		4BAEB3191D0EB58E00E77FAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAEB3181D0EB58E00E77FAD /* ViewController.swift */; };
 		4BAEB31C1D0EB58E00E77FAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BAEB31A1D0EB58E00E77FAD /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		4BAEB3211D0EB58E00E77FAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BAEB31F1D0EB58E00E77FAD /* LaunchScreen.storyboard */; };
 		4BAEB32C1D0EB58E00E77FAD /* iQONTweetDisplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAEB32B1D0EB58E00E77FAD /* iQONTweetDisplayTests.swift */; };
 		4BAEB3371D0EB58E00E77FAD /* iQONTweetDisplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAEB3361D0EB58E00E77FAD /* iQONTweetDisplayUITests.swift */; };
+		F49DA3DB79F5BF5FA1ABC09E /* Pods_iQONTweetDisplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17B37EA90DE8A5E6FC37B9F /* Pods_iQONTweetDisplay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0606248D89C623DB2C56E0D5 /* Pods-iQONTweetDisplay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iQONTweetDisplay.release.xcconfig"; path = "Pods/Target Support Files/Pods-iQONTweetDisplay/Pods-iQONTweetDisplay.release.xcconfig"; sourceTree = "<group>"; };
+		091A0117452C7CAC22343DD0 /* Pods-iQONTweetDisplay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iQONTweetDisplay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iQONTweetDisplay/Pods-iQONTweetDisplay.debug.xcconfig"; sourceTree = "<group>"; };
+		4B3E72111D1028F10011AC18 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		4B3E72331D11914C0011AC18 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		4BAEB3131D0EB58D00E77FAD /* iQONTweetDisplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQONTweetDisplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAEB3161D0EB58E00E77FAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BAEB3181D0EB58E00E77FAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,7 @@
 		4BAEB3321D0EB58E00E77FAD /* iQONTweetDisplayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQONTweetDisplayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAEB3361D0EB58E00E77FAD /* iQONTweetDisplayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQONTweetDisplayUITests.swift; sourceTree = "<group>"; };
 		4BAEB3381D0EB58E00E77FAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E17B37EA90DE8A5E6FC37B9F /* Pods_iQONTweetDisplay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iQONTweetDisplay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F49DA3DB79F5BF5FA1ABC09E /* Pods_iQONTweetDisplay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		108CA3EBA6C3A912E6006C2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E17B37EA90DE8A5E6FC37B9F /* Pods_iQONTweetDisplay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4BAEB30A1D0EB58D00E77FAD = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +98,8 @@
 				4BAEB32A1D0EB58E00E77FAD /* iQONTweetDisplayTests */,
 				4BAEB3351D0EB58E00E77FAD /* iQONTweetDisplayUITests */,
 				4BAEB3141D0EB58D00E77FAD /* Products */,
+				58F36741E54F15494FC1DB7E /* Pods */,
+				108CA3EBA6C3A912E6006C2C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +118,8 @@
 			children = (
 				4BAEB3161D0EB58E00E77FAD /* AppDelegate.swift */,
 				4BAEB3181D0EB58E00E77FAD /* ViewController.swift */,
+				4B3E72331D11914C0011AC18 /* CustomCell.swift */,
+				4B3E72111D1028F10011AC18 /* Tweet.swift */,
 				4BAEB31A1D0EB58E00E77FAD /* Main.storyboard */,
 				4BAEB31D1D0EB58E00E77FAD /* Assets.xcassets */,
 				4BAEB31F1D0EB58E00E77FAD /* LaunchScreen.storyboard */,
@@ -125,6 +146,15 @@
 			path = iQONTweetDisplayUITests;
 			sourceTree = "<group>";
 		};
+		58F36741E54F15494FC1DB7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				091A0117452C7CAC22343DD0 /* Pods-iQONTweetDisplay.debug.xcconfig */,
+				0606248D89C623DB2C56E0D5 /* Pods-iQONTweetDisplay.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BAEB33B1D0EB58E00E77FAD /* Build configuration list for PBXNativeTarget "iQONTweetDisplay" */;
 			buildPhases = (
+				3424B2F4DDB6FF484A89B05A /* Check Pods Manifest.lock */,
 				4BAEB30F1D0EB58D00E77FAD /* Sources */,
 				4BAEB3101D0EB58D00E77FAD /* Frameworks */,
 				4BAEB3111D0EB58D00E77FAD /* Resources */,
+				6774043CE7F7800E3D1B408C /* Embed Pods Frameworks */,
+				8BA8413A5B560272F7918AFD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +226,7 @@
 				TargetAttributes = {
 					4BAEB3121D0EB58D00E77FAD = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Y8792843U9;
 					};
 					4BAEB3261D0EB58E00E77FAD = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -251,12 +285,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3424B2F4DDB6FF484A89B05A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6774043CE7F7800E3D1B408C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iQONTweetDisplay/Pods-iQONTweetDisplay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BA8413A5B560272F7918AFD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iQONTweetDisplay/Pods-iQONTweetDisplay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4BAEB30F1D0EB58D00E77FAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B3E72121D1028F10011AC18 /* Tweet.swift in Sources */,
 				4BAEB3191D0EB58E00E77FAD /* ViewController.swift in Sources */,
+				4B3E72341D11914D0011AC18 /* CustomCell.swift in Sources */,
 				4BAEB3171D0EB58E00E77FAD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,25 +483,33 @@
 		};
 		4BAEB33C1D0EB58E00E77FAD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 091A0117452C7CAC22343DD0 /* Pods-iQONTweetDisplay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iQONTweetDisplay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iQONTweetDisplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		4BAEB33D1D0EB58E00E77FAD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0606248D89C623DB2C56E0D5 /* Pods-iQONTweetDisplay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iQONTweetDisplay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iQONTweetDisplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
