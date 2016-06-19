@@ -24,14 +24,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.selectTwitterAccount()
         statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         screenSize = UIScreen.mainScreen().bounds.size
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     private func selectTwitterAccount() {
-        
         let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
-        
         accountStore.requestAccessToAccountsWithType(accountType, options: nil) { (granted:Bool, error:NSError?) -> Void in
             if error != nil {
                 self.presentViewController(self.createErrorAlert("通信が失敗しました", type: .Alert), animated: true, completion: nil)
@@ -72,7 +68,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                     self.tweets.append(Tweet(fullname: aTweet["user"]["name"].stringValue, username: aTweet["user"]["screen_name"].stringValue, avatarURLString: aTweet["user"]["profile_image_url_https"].stringValue, tweetText: aTweet["text"].stringValue, timeStamp: aTweet["created_at"].stringValue))
                 }
                 if let query = json["search_metadata"]["next_results"].string {
-                    print(self.tweets.count)
                     if self.tweets.count < 1000 {
                         self.getTweets(self.parseStringToDictionary(query.stringByReplacingOccurrencesOfString("?", withString: "")))
                     }
@@ -105,7 +100,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return parsedQuery
     }
 
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -133,5 +127,4 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: screenSize.width, height: (screenSize.height -  statusBarHeight)/4)
     }
-
 }
