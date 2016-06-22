@@ -6,8 +6,8 @@
 //  Copyright © 2016年 kiri. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import SwiftyJSON
 
 class Tweet {
     let fullname: String
@@ -16,12 +16,12 @@ class Tweet {
     let timeStamp: String
     var avatar = UIImage()
     
-    init(fullname: String, username: String, avatarURLString: String, tweetText: String, timeStamp: String) {
-        self.fullname = fullname
-        self.username = username
-        self.tweetText = tweetText
-        self.timeStamp = timeStamp
-        self.avatar = downloadImageFromURL(avatarURLString)
+    init(jsonData: JSON) {
+        self.fullname = jsonData["user"]["name"].stringValue
+        self.username = jsonData["user"]["screen_name"].stringValue
+        self.tweetText = jsonData["text"].stringValue
+        self.timeStamp = jsonData["created_at"].stringValue
+        self.avatar = downloadImageFromURL(jsonData["user"]["profile_image_url_https"].stringValue)
     }
     
     private func downloadImageFromURL(imageURLString: String) -> UIImage {

@@ -66,7 +66,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             } else {
                 let json = JSON(data: responseData)
                 for aTweet in json["statuses"].array! {
-                    self.tweets.append(Tweet(fullname: aTweet["user"]["name"].stringValue, username: aTweet["user"]["screen_name"].stringValue, avatarURLString: aTweet["user"]["profile_image_url_https"].stringValue, tweetText: aTweet["text"].stringValue, timeStamp: aTweet["created_at"].stringValue))
+                    self.tweets.append(Tweet(jsonData: aTweet))
                 }
                 if let query = json["search_metadata"]["next_results"].string {
                     if self.tweets.count < 1000 {
