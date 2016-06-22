@@ -100,17 +100,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         return parsedQuery
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("customCell", forIndexPath: indexPath) as! CustomCell
         if tweets.count >= 10 {
             cell.setTweet(tweets[indexPath.row])
-            print("\(cell.frame.height) \(cell.tweetTextLabel.frame.height)")
         }
         cell.layoutIfNeeded()
         return cell
