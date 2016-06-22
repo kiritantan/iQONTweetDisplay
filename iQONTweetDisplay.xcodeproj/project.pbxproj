@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B3E72121D1028F10011AC18 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E72111D1028F10011AC18 /* Tweet.swift */; };
 		4B3E72341D11914D0011AC18 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E72331D11914C0011AC18 /* CustomCell.swift */; };
+		4B53D4A01D1703F500B58BB7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B53D49F1D1703F500B58BB7 /* String.swift */; };
 		4BAEB3171D0EB58E00E77FAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAEB3161D0EB58E00E77FAD /* AppDelegate.swift */; };
 		4BAEB3191D0EB58E00E77FAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAEB3181D0EB58E00E77FAD /* ViewController.swift */; };
 		4BAEB31C1D0EB58E00E77FAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BAEB31A1D0EB58E00E77FAD /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		091A0117452C7CAC22343DD0 /* Pods-iQONTweetDisplay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iQONTweetDisplay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iQONTweetDisplay/Pods-iQONTweetDisplay.debug.xcconfig"; sourceTree = "<group>"; };
 		4B3E72111D1028F10011AC18 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		4B3E72331D11914C0011AC18 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		4B53D49F1D1703F500B58BB7 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		4BAEB3131D0EB58D00E77FAD /* iQONTweetDisplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQONTweetDisplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BAEB3161D0EB58E00E77FAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BAEB3181D0EB58E00E77FAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				4BAEB3181D0EB58E00E77FAD /* ViewController.swift */,
 				4B3E72331D11914C0011AC18 /* CustomCell.swift */,
 				4B3E72111D1028F10011AC18 /* Tweet.swift */,
+				4B53D49F1D1703F500B58BB7 /* String.swift */,
 				4BAEB31A1D0EB58E00E77FAD /* Main.storyboard */,
 				4BAEB31D1D0EB58E00E77FAD /* Assets.xcassets */,
 				4BAEB31F1D0EB58E00E77FAD /* LaunchScreen.storyboard */,
@@ -340,6 +343,7 @@
 			files = (
 				4B3E72121D1028F10011AC18 /* Tweet.swift in Sources */,
 				4BAEB3191D0EB58E00E77FAD /* ViewController.swift in Sources */,
+				4B53D4A01D1703F500B58BB7 /* String.swift in Sources */,
 				4B3E72341D11914D0011AC18 /* CustomCell.swift in Sources */,
 				4BAEB3171D0EB58E00E77FAD /* AppDelegate.swift in Sources */,
 			);

@@ -24,6 +24,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.selectTwitterAccount()
         statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         screenSize = UIScreen.mainScreen().bounds.size
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = CGSizeMake(1, 1) }
     }
     
     private func selectTwitterAccount() {
@@ -109,7 +110,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("customCell", forIndexPath: indexPath) as! CustomCell
         if tweets.count >= 10 {
             cell.setTweet(tweets[indexPath.row])
+            print("\(cell.frame.height) \(cell.tweetTextLabel.frame.height)")
         }
+        cell.layoutIfNeeded()
         return cell
     }
     
@@ -125,6 +128,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: screenSize.width, height: (screenSize.height -  statusBarHeight)/4)
+        var cellSize = CGSize(width: screenSize.width, height: (screenSize.height -  statusBarHeight)/4)
+        if tweets.count >= 10 {
+            let textHeight = tweets[indexPath.row].tweetText.getTextSize(UIFont.systemFontOfSize(12),viewWidth: screenSize.width - 16).height
+            cellSize = CGSize(width: screenSize.width, height: 80 + textHeight)
+        }
+        return cellSize
     }
 }

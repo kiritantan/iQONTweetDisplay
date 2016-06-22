@@ -14,6 +14,11 @@ class CustomCell: UICollectionViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
+    override var bounds: CGRect {
+        didSet {
+            contentView.frame = bounds
+        }
+    }
     
     func setTweet(tweet: Tweet) {
         iconImageView.image = tweet.avatar
