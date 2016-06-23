@@ -115,18 +115,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if tweets.count >= 10 {
-            return tweets.count
-        }
-        return 10
+        return tweets.count
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        var cellSize = CGSize(width: screenSize.width, height: (screenSize.height -  statusBarHeight)/4)
-        if tweets.count >= 10 {
-            let textHeight = tweets[indexPath.row].tweetText.getTextSize(UIFont.systemFontOfSize(12),viewWidth: screenSize.width - 16).height
-            cellSize = CGSize(width: screenSize.width, height: 80 + textHeight)
-        }
-        return cellSize
+        let textHeight = tweets[indexPath.row].tweetText.getTextSize(UIFont.systemFontOfSize(12),viewWidth: screenSize.width - 16).height
+        return CGSize(width: screenSize.width, height: 80 + textHeight)
     }
 }
