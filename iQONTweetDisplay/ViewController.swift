@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
+    private var myActivityIndicator: UIActivityIndicatorView!
     var accountStore = ACAccountStore()
     var twAccount: ACAccount?
     var tweets: [Tweet] = []
@@ -25,6 +26,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         screenSize = UIScreen.mainScreen().bounds.size
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = CGSizeMake(1, 1) }
+        myActivityIndicator = UIActivityIndicatorView()
+        myActivityIndicator.frame = CGRectMake(0, 0, 50, 50)
+        myActivityIndicator.center = self.view.center
+        myActivityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        myActivityIndicator.startAnimating()
+        self.view.addSubview(myActivityIndicator)
     }
     
     private func selectTwitterAccount() {
@@ -75,6 +82,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 }
                 dispatch_async(dispatch_get_main_queue(), {
                     self.collectionView.reloadData()
+                    self.myActivityIndicator.stopAnimating()
                 })
             }
         }
