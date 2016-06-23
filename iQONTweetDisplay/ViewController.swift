@@ -92,6 +92,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let alert: UIAlertController = UIAlertController(title: "エラー", message: errorMessage, preferredStyle:  type)
         let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
             (action: UIAlertAction!) -> Void in
+            self.myActivityIndicator.stopAnimating()
+            
         })
         alert.addAction(defaultAction)
         return alert
